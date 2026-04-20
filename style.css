@@ -1,0 +1,92 @@
+:root {
+    --primary: #1e293b; /* Deep Indigo/Slate */
+    --accent: #0ea5e9;  /* Modern Sky Blue */
+    --accent-soft: #e0f2fe;
+    --text-main: #334155;
+    --text-light: #64748b;
+    --bg-light: #f1f5f9;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    color: var(--text-main);
+    background-color: var(--bg-light);
+    margin: 0;
+}
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 25px; }
+
+header {
+    background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%);
+    color: var(--white);
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--accent);
+}
+
+header h1 { font-size: 2.8rem; margin: 0; letter-spacing: -1px; }
+.subtitle { color: var(--accent); font-size: 1.2rem; font-weight: 500; margin-top: 10px; }
+
+.contact-links { margin-top: 25px; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+.contact-links a, .contact-links span { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; }
+.contact-links a:hover { color: var(--accent); }
+
+section { margin: 50px 0; background: var(--white); padding: 30px; border-radius: 12px; shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+
+h2 { color: var(--primary); font-size: 1.5rem; margin-bottom: 25px; border-left: 5px solid var(--accent); padding-left: 15px; }
+
+/* Workflow Section */
+.workflow-container { display: flex; gap: 20px; text-align: center; margin-top: 20px; }
+.workflow-step { flex: 1; padding: 15px; background: var(--bg-light); border-radius: 8px; }
+.workflow-step i { font-size: 2rem; color: var(--accent); margin-bottom: 10px; }
+.workflow-step h4 { margin: 10px 0; color: var(--primary); }
+
+/* Skills Section */
+.skills-section { display: flex; flex-direction: column; gap: 20px; }
+.tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.tags span { background: var(--accent-soft); color: #0369a1; padding: 5px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+
+/* Project Cards */
+.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.project-card { border: 1px solid #e2e8f0; transition: transform 0.2s; background: var(--white); padding: 20px; border-radius: 8px; }
+.project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+
+/* Education Section */
+.education-card { padding: 15px 0; }
+.edu-header { display: flex; justify-content: space-between; align-items: baseline; }
+.cgpa { background: var(--primary); color: white; padding: 2px 10px; border-radius: 5px; font-size: 0.9rem; }
+
+footer { text-align: center; padding: 50px; color: var(--text-light); }
+
+@media (max-width: 768px) {
+    .workflow-container, .project-grid { flex-direction: column; }
+    header h1 { font-size: 2rem; }
+}
+/* Resume Download Button */
+.resume-cta {
+    margin-top: 30px;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--primary) !important;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.download-btn i {
+    margin-right: 8px;
+}
+
+.download-btn:hover {
+    background-color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+}
