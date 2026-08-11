@@ -49,9 +49,12 @@ def update_download_link(latest_filename):
     
     def replace_href(match):
         old_href = match.group(2)
-        if old_href != new_href:
+        # Check if the filename is actually different (case-insensitive)
+        if old_href.lower() != new_href.lower():
             print(f"Updating resume download link from '{old_href}' to '{new_href}'")
-        return f"{match.group(1)}{new_href}{match.group(3)}"
+            return f"{match.group(1)}{new_href}{match.group(3)}"
+        # If it's the same file (even if case is different locally), keep the original HTML to prevent breaking GitHub Pages case-sensitivity
+        return match.group(0)
         
     new_content, count = re.subn(pattern, replace_href, html_content, flags=re.IGNORECASE)
     
